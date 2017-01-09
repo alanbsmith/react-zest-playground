@@ -1,4 +1,74 @@
-h1 {
-  font-family: helvetica;
+body {
+  font-family: helvetica neue;
+  color: #1F2D3D;
+  font-size: 16px;
+  margin: 0;
+}
+
+.banner {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  padding: 10px 20px;
+  background-color: #13CE66;
+  color: #1F2D3D;
   font-weight: 200;
+  opacity: 1;
+  transition: all 0.3s ease;
+  &.hide {
+    opacity: 0;
+    transform: translateY(-80px);
+  }
+}
+
+.banner__text {
+  font-size: 20px;
+}
+
+.login-form {
+  width: 400px;
+  margin: 100px auto 0;
+  padding: 20px 10px;
+  border: 1px solid #E0E6ED;
+  border-radius: 4px;
+  label {
+    display: block;
+    color: #8492A6;
+  }
+  button {
+    display: block;
+  }
+}
+
+.login-form__title {
+  font-size: 24px;
+  font-weight: 200;
+}
+
+.login-form__input {
+  width: 380px;
+  display: block;
+  padding: 10px;
+  margin: 10px 0px;
+  font-size: 16px;
+  font-weight: 200;
+  border-radius: 4px;
+  border: solid 1px #8492A6;
+  &:focus {
+    outline: none;
+  }
+}
+
+.login-form__submit {
+  width: 100%;
+  padding: 20px;
+  font-size: 18px;
+  background-color: #1FB6FF;
+  border: none;
+  border-radius: 4px;
+  font-weight: 200;
+  color: #fff;
+  &:focus {
+    outline: none;
+  }
 }
