@@ -13,9 +13,9 @@ class Info extends Component {
     if (!this.state.showInfo) { return false; }
 
     return (
-      <span className="info__text">
+      <div className="info__text">
         fill out the form with your information
-      </span>
+      </div>
     )
   }
 

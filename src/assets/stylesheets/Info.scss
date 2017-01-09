@@ -4,7 +4,9 @@
 }
 
 .info__text {
-  position: absolute;
+  display: inline-block;
+  font-size: 14px;
+  position: relative;
   right: 50px;
   padding: 10px;
   width: 150px;
@@ -17,6 +19,7 @@
 
 .info__btn {
   position: absolute;
+  border-radius: 50%;
   right: 0px;
   height: 40px;
   width: 40px;
