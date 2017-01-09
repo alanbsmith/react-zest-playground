@@ -1,0 +1,20 @@
+.banner {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  padding: 10px 20px;
+  background-color: #13CE66;
+  color: #1F2D3D;
+  font-weight: 200;
+  opacity: 1;
+  transition: all 0.3s ease;
+  &.hide {
+    opacity: 0;
+    transform: translateY(-80px);
+  }
+}
+
+.banner__text {
+  font-size: 20px;
+  letter-spacing: 1px;
+}

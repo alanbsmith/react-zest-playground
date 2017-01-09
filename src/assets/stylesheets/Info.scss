@@ -1,0 +1,28 @@
+.info {
+  position: absolute;
+  right: 20px;
+}
+
+.info__text {
+  position: absolute;
+  right: 50px;
+  padding: 10px;
+  width: 150px;
+  border: 1px solid #C0CCDA;
+  border-radius: 4px;
+  color: #C0CCDA;
+  font-weight: 200;
+  letter-spacing: 1px;
+}
+
+.info__btn {
+  position: absolute;
+  right: 0px;
+  height: 40px;
+  width: 40px;
+  opacity: 0.6;
+  background: url('../images/icon-info.svg') no-repeat center/contain;
+  &:hover {
+    background: url('../images/icon-info-hover.svg') no-repeat center/contain;
+  }
+}

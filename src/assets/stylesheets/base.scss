@@ -5,33 +5,16 @@ body {
   margin: 0;
 }
 
-.banner {
-  position: fixed;
-  top: 0;
-  width: 100%;
-  padding: 10px 20px;
-  background-color: #13CE66;
-  color: #1F2D3D;
-  font-weight: 200;
-  opacity: 1;
-  transition: all 0.3s ease;
-  &.hide {
-    opacity: 0;
-    transform: translateY(-80px);
-  }
-}
-
-.banner__text {
-  font-size: 20px;
-}
-
 .login-form {
+  position: relative;
   width: 400px;
   margin: 100px auto 0;
-  padding: 20px 10px;
+  padding: 20px 20px;
   border: 1px solid #E0E6ED;
   border-radius: 4px;
   label {
+    text-transform: uppercase;
+    font-size: 12px;
     display: block;
     color: #8492A6;
   }
@@ -46,21 +29,24 @@ body {
 }
 
 .login-form__input {
-  width: 380px;
+  width: 100%;
   display: block;
-  padding: 10px;
+  padding: 10px 0px;
   margin: 10px 0px;
   font-size: 16px;
   font-weight: 200;
-  border-radius: 4px;
-  border: solid 1px #8492A6;
+  border: none;
+  border-bottom: solid 1px #C0CCDA;
+  transition: border 0.3s ease;
   &:focus {
     outline: none;
+    border-bottom-color: #1FB6FF;
   }
 }
 
 .login-form__submit {
   width: 100%;
+  margin-top: 20px;
   padding: 20px;
   font-size: 18px;
   background-color: #1FB6FF;
@@ -70,5 +56,21 @@ body {
   color: #fff;
   &:focus {
     outline: none;
+  }
+}
+
+
+.login-form__toggle {
+  text-align: center;
+  margin: 20px 0;
+  text-transform: capitalize;
+  font-size: 14px;
+  a {
+    text-decoration: none;
+    color: #8492A6;
+    transition: color 0.3s ease;
+    &:hover {
+      color: #1FB6FF;
+    }
   }
 }

@@ -1,24 +1,24 @@
 import '../assets/stylesheets/base.scss';
 import React, { Component } from 'react';
 
+import Banner from './Banner';
+import LoginForm from './LoginForm';
+import SignupForm from './SignupForm';
+
+
 class App extends Component {
   constructor(props) {
     super(props);
 
     this.state = {
-      password: '',
       showBanner: false,
-      username: ''
+      showLogin: true,
     };
   }
 
-  submitForm(e) {
-    e.preventDefault();
-    // handle validations here
+  showBanner() {
     this.setState({
-      password: '',
-      showBanner: true,
-      username: ''
+      showBanner: true
     });
 
     setTimeout(() => {
@@ -26,38 +26,37 @@ class App extends Component {
     }, 2000);
   }
 
-  renderBanner() {
-    const bannerClasses = this.state.showBanner ? 'banner' : 'banner hide';
+  toggleForm(e) {
+    e.preventDefault();
+    this.setState({
+      showBanner: false,
+      showLogin: !this.state.showLogin
+    });
+  }
 
+  renderForm() {
+    if (this.state.showLogin) {
+      return (
+        <LoginForm
+          showBanner={() => this.showBanner()}
+          toggleForm={e => this.toggleForm(e)} />
+      )
+    }
     return (
-      <div className={bannerClasses}>
-        <p className="banner__text">Login success!</p>
-      </div>
+      <SignupForm
+        showBanner={() => this.showBanner()}
+        toggleForm={e => this.toggleForm(e)} />
     )
   }
+
 
   render() {
     return(
       <div className="content">
-        {this.renderBanner()}
-        <form className="login-form">
-          <h3 className="login-form__title">Login</h3>
-          <label>Username</label>
-          <input
-            type="text"
-            className="login-form__input"
-            value={this.state.username}
-            onChange={e => this.setState({ username: e.target.value })} />
-          <label>Password</label>
-          <input
-            type="password"
-            className="login-form__input"
-            value={this.state.password}
-            onChange={e => this.setState({ password: e.target.value })} />
-          <button type="submit" className="login-form__submit" onClick={ e => this.submitForm(e) }>
-            Login!
-          </button>
-        </form>
+        <Banner
+          show={this.state.showBanner}
+          showLogin={this.state.showLogin} />
+        {this.renderForm()}
       </div>
     )
   }
