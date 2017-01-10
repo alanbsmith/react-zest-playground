@@ -1,4 +1,4 @@
-import '../assets/stylesheets/base.scss';
+import '../assets/stylesheets/App.scss';
 import React, { Component } from 'react';
 
 import Banner from './Banner';
@@ -11,19 +11,23 @@ class App extends Component {
     super(props);
 
     this.state = {
+      bannerClasses: '',
+      bannerText: '',
       showBanner: false,
-      showLogin: true,
+      showLogin: true
     };
   }
 
-  showBanner() {
+  showBanner(data) {
     this.setState({
+      bannerClasses: data.type,
+      bannerText: data.text,
       showBanner: true
     });
 
     setTimeout(() => {
       this.setState({ showBanner: false });
-    }, 2000);
+    }, 5000);
   }
 
   toggleForm(e) {
@@ -38,13 +42,13 @@ class App extends Component {
     if (this.state.showLogin) {
       return (
         <LoginForm
-          showBanner={() => this.showBanner()}
+          showBanner={(data) => this.showBanner(data)}
           toggleForm={e => this.toggleForm(e)} />
       )
     }
     return (
       <SignupForm
-        showBanner={() => this.showBanner()}
+        showBanner={(data) => this.showBanner(data)}
         toggleForm={e => this.toggleForm(e)} />
     )
   }
@@ -54,8 +58,9 @@ class App extends Component {
     return(
       <div className="content">
         <Banner
-          show={this.state.showBanner}
-          showLogin={this.state.showLogin} />
+          type={this.state.bannerClasses}
+          text={this.state.bannerText}
+          show={this.state.showBanner} />
         {this.renderForm()}
       </div>
     )

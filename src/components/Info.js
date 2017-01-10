@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import '../assets/stylesheets/Info.scss';
 
+
 class Info extends Component {
   constructor(props) {
     super(props);
@@ -20,12 +21,13 @@ class Info extends Component {
   }
 
   render() {
+    const infoClasses = this.state.showInfo ? 'info__btn close' : 'info__btn';
     return (
       <div className="info">
       {this.renderInfoText()}
       <a
         onClick={() => this.setState({ showInfo: !this.state.showInfo })}
-        className="info__btn" />
+        className={infoClasses} />
       </div>
     )
   }

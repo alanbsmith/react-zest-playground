@@ -1,14 +1,8 @@
-body {
-  font-family: helvetica neue;
-  color: #1F2D3D;
-  font-size: 16px;
-  margin: 0;
-}
-
 .login-form {
+  background-color: #fff;
   position: relative;
   width: 400px;
-  margin: 100px auto 0;
+  margin: 120px auto 0;
   padding: 20px 20px;
   border: 1px solid #E0E6ED;
   border-radius: 4px;
@@ -42,6 +36,18 @@ body {
     outline: none;
     border-bottom-color: #1FB6FF;
   }
+  &.invalid {
+    color: #FF4949;
+    border-bottom-color: #FF4949;
+  }
+}
+
+.input__error-text {
+  color: #FF4949;
+  margin-bottom: 10px;
+  text-transform: uppercase;
+  font-size: 12px;
+  text-align: right;
 }
 
 .login-form__submit {
